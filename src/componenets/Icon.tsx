@@ -1,10 +1,10 @@
-import * as React from "react";
-import { useEffect } from "react";
-import { IconKey, Skycons } from "skycons-ts";
+import React,  { useEffect}  from "react";
+import { Skycons } from "skycons-ts";
 import { IconOptions } from "../types/interfaces";
 type IconProp = {
   options: IconOptions;
 };
+
 function Icon({ options }: IconProp) {
   useEffect(function () {
     let icons = new Skycons({ color: options.color });
@@ -21,4 +21,5 @@ function Icon({ options }: IconProp) {
     </div>
   );
 }
+
 export default Icon;

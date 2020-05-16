@@ -1,0 +1,13 @@
+$fontColor:black;
+.temp-c{
+  color: $fontColor;
+  &:after{
+    content:"C";
+  }
+}
+.temp-f{
+  color: $fontColor;
+  &:after{
+    content:"F";
+  }
+}
