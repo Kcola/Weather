@@ -1,4 +1,4 @@
-import React,  { useEffect}  from "react";
+import React, { useEffect } from "react";
 import { Skycons } from "skycons-ts";
 import { IconOptions } from "../types/interfaces";
 type IconProp = {
@@ -12,13 +12,11 @@ function Icon({ options }: IconProp) {
     icons.play();
   });
   return (
-    <div>
-      <canvas
-        id={`icon${options.instance}`}
-        width={options.width}
-        height={options.height}
-      ></canvas>
-    </div>
+    <canvas
+      id={`icon${options.instance}`}
+      width={options.width}
+      height={options.height}
+    />
   );
 }
 
