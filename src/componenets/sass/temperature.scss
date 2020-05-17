@@ -1,13 +1,20 @@
-$fontColor:black;
 .temp-c{
   color: $fontColor;
   &:after{
-    content:"C";
+    font-size: 50%;
+    content:"°C";
+    position: absolute;
+    top: 10%;
+    left:85%;
   }
 }
 .temp-f{
   color: $fontColor;
   &:after{
-    content:"F";
+    content:"°F";
+    font-size: 50%;
+    position: absolute;
+    top: 10%;
+    left:85%;
   }
 }

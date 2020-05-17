@@ -4,11 +4,15 @@ import Row from "react-bootstrap/Row";
 type Center = {
   children?: ReactNode;
   height: string;
+  id?: string;
+  colClass: number | string;
 };
-function Center({ children, height }: Center) {
+function Center({ id, children, height, colClass }: Center) {
   return (
-    <Row style={{ height: height }}>
-      <div className={`col col-auto ml-auto mr-auto my-auto`}>{children}</div>
+    <Row id={id} style={{ height: height }}>
+      <div className={`col ${colClass} ml-auto mr-auto my-auto`}>
+        {children}
+      </div>
     </Row>
   );
 }

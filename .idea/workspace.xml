@@ -20,18 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fd20830-c696-4e90-9edf-ed807194b428" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componenets/Center.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componenets/Description.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componenets/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componenets/Location.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componenets/sass/home.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componenets/sass/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componenets/Icon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/Icon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componenets/Temperature.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/Temperature.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componenets/Center.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/Center.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componenets/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componenets/sass/temperature.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/sass/temperature.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
+        <option value="Sass File" />
       </list>
     </option>
   </component>
@@ -58,10 +57,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="Sass" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -71,7 +72,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -110,6 +111,8 @@
       <workItem from="1589662806731" duration="1751000" />
       <workItem from="1589671634432" duration="258000" />
       <workItem from="1589671972484" duration="2796000" />
+      <workItem from="1589675731905" duration="2318000" />
+      <workItem from="1589750223609" duration="1698000" />
     </task>
     <servers />
   </component>
@@ -129,41 +132,60 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="910" y="390" width="695" height="331" key="#File_Watchers" timestamp="1589723280038">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="910" y="390" width="695" height="331" key="#File_Watchers/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589723280038" />
     <state x="0" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589653086536">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="0" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589653086536" />
-    <state x="694" y="335" width="660" height="478" key="EditFileWatcherDialog" timestamp="1589661261121">
+    <state x="694" y="335" width="660" height="639" key="EditFileWatcherDialog" timestamp="1589738524793">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="694" y="335" width="660" height="478" key="EditFileWatcherDialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589661261121" />
-    <state x="805" y="312" key="FileChooserDialogImpl" timestamp="1589661226780">
+    <state x="694" y="335" width="660" height="639" key="EditFileWatcherDialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589738524793" />
+    <state x="1315" y="265" key="FileChooserDialogImpl" timestamp="1589723235702">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="805" y="312" key="FileChooserDialogImpl/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589661226780" />
-    <state width="572" height="295" key="GridCell.Tab.0.bottom" timestamp="1589674596939">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="1315" y="265" key="FileChooserDialogImpl/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589723235702" />
+    <state width="1523" height="305" key="GridCell.Tab.0.bottom" timestamp="1589741224190">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="572" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589674596939" />
-    <state width="2027" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589663841191" />
-    <state width="572" height="295" key="GridCell.Tab.0.center" timestamp="1589674596938">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="572" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589674596938" />
-    <state width="2027" height="305" key="GridCell.Tab.0.center/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589663841191" />
-    <state width="572" height="295" key="GridCell.Tab.0.left" timestamp="1589674596937">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="572" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589674596937" />
-    <state width="2027" height="305" key="GridCell.Tab.0.left/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589663841190" />
-    <state width="572" height="295" key="GridCell.Tab.0.right" timestamp="1589674596938">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="572" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589674596938" />
-    <state width="2027" height="305" key="GridCell.Tab.0.right/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589663841191" />
-    <state x="127" y="231" key="SettingsEditor" timestamp="1589653369618">
+    <state width="1523" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589741224190" />
+    <state width="1523" height="305" key="GridCell.Tab.0.center" timestamp="1589741224189">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="127" y="231" key="SettingsEditor/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589653369618" />
+    <state width="572" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589674596938" />
+    <state width="1523" height="305" key="GridCell.Tab.0.center/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589741224189" />
+    <state width="1523" height="305" key="GridCell.Tab.0.left" timestamp="1589741224189">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="572" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589674596937" />
+    <state width="1523" height="305" key="GridCell.Tab.0.left/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589741224189" />
+    <state width="1523" height="305" key="GridCell.Tab.0.right" timestamp="1589741224189">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="572" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589674596938" />
+    <state width="1523" height="305" key="GridCell.Tab.0.right/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589741224189" />
+    <state x="127" y="231" key="SettingsEditor" timestamp="1589738525901">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="127" y="231" key="SettingsEditor/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589738525901" />
+    <state x="447" y="401" width="704" height="310" key="cloudConfig.SelfSettingsDialog" timestamp="1589723307911">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="447" y="401" width="704" height="310" key="cloudConfig.SelfSettingsDialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589723307911" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/componenets/Temperature.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
