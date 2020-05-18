@@ -1,17 +1,24 @@
 import React from "react";
 import Nav, { NavProps } from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 
 function Header(props: NavProps) {
   return (
     <Nav {...props}>
       <Nav.Item>
-        <Nav.Link href="/home">Home</Nav.Link>
+        <Nav.Link as={Link} to="/">
+          Home
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/forecast">Forecast</Nav.Link>
+        <Nav.Link as={Link} to="/forecast">
+          Forecast
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/timeMachine">Time Machine</Nav.Link>
+        <Nav.Link as={Link} to="/timemachine">
+          Time Machine
+        </Nav.Link>
       </Nav.Item>
     </Nav>
   );
