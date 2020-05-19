@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Forecast from "./pages/Forecast";
 import TimeMachine from "./pages/TimeMachine";
-import { initWeather } from "./helpers/functions";
+import { initWeather, refreshWeather, truthy } from "./helpers/functions";
 import { getWeather } from "./helpers/getWeather";
 import { Geo, WeatherInfo } from "./helpers/interfaces";
 
@@ -16,24 +16,31 @@ export async function weather() {
 function App() {
   let options = {
     color: "white",
+    iconHeight: 128,
+    iconWidth: 128,
+    instance: 1,
+    description: "rain",
   } as WeatherInfo;
 
   const [weather, setWeather] = useState(options);
-
-  useEffect(function () {
-    let position = {} as Geo;
-    if (!weather.loaded) initWeather(position, setWeather);
-  });
-  if (weather.loaded)
+  let [loaded, setLoaded] = useState(false);
+  useEffect(
+    function () {
+      let position = {} as Geo;
+      if (!loaded) {
+        if (!truthy(sessionStorage.positon))
+          initWeather(position, setWeather, setLoaded);
+        else refreshWeather(setWeather, setLoaded);
+      }
+    },
+    [loaded]
+  );
+  if (loaded)
     return (
       <Router>
         <Header variant="tabs" defaultActiveKey="/home" />
         <Switch>
-          <Route
-            exact
-            path="/"
-            component={(props: any) => <Home {...props} {...weather} />}
-          />
+          <Route exact path="/" component={() => <Home {...weather} />} />
           <Route exact path="/forecast" component={Forecast} />
           <Route exact path="/timemachine" component={TimeMachine} />
         </Switch>

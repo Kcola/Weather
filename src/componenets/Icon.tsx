@@ -8,14 +8,14 @@ type IconProp = {
 function Icon({ options }: IconProp) {
   useEffect(function () {
     let icons = new Skycons({ color: options.color });
-    icons.add(`icon${options.instance}`, options.description);
+    icons.add(`icon${options.instance}`, options.icon);
     icons.play();
   });
   return (
     <canvas
       id={`icon${options.instance}`}
-      width={options.width}
-      height={options.height}
+      width={options.iconWidth}
+      height={options.iconHeight}
     />
   );
 }

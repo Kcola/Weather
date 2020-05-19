@@ -11,7 +11,7 @@ import { WeatherInfo } from "../helpers/interfaces";
 function Home(weatherInfo: any) {
   return (
     <Center colClass="col-xs-auto col-lg-6" id="home" height="93vh">
-      <Row style={{ padding: "50px", marginBottom: "50px" }}>
+      <Row style={{ marginBottom: "50px" }}>
         <Col>
           <Center colClass="col-auto" height="100%">
             <Location
@@ -26,11 +26,11 @@ function Home(weatherInfo: any) {
           </Center>
         </Col>
       </Row>
-      <Row style={{ padding: "50px", marginTop: "50px" }}>
+      <Row style={{ marginTop: "50px" }}>
         <Col>
           <Center colClass="col-auto" height="100%">
             <Temperature
-              style={{ fontSize: "3rem" }}
+              style={{ textAlign: "center", fontSize: "3rem" }}
               tempC={weatherInfo.tempC}
               tempF={weatherInfo.tempF}
               unit={"F"}

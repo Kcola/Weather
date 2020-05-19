@@ -1,14 +1,14 @@
 import {IconKey} from "skycons-ts";
 export interface WeatherInfo {
-    loaded: boolean,
     location:string,
     instance:number,
     color: string,
-    description: IconKey,
-    width: number,
+    icon: IconKey,
+    iconWidth?: number,
     tempC: number,
     tempF: number,
-    height: number
+    iconHeight?: number,
+    description:string
 }
 
 export interface Geo

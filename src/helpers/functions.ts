@@ -2,7 +2,7 @@ import {Geo, WeatherInfo} from "./interfaces";
 import React from "react";
 import {weather} from "../App";
 
-export function initWeather(position: Geo, setWeather :React.Dispatch<React.SetStateAction<WeatherInfo>>){
+export function initWeather(position: Geo, setWeather :React.Dispatch<React.SetStateAction<WeatherInfo>>, setLoaded :React.Dispatch<React.SetStateAction<boolean>>){
     function success(location: any) {
         position.long = location.coords.longitude;
         position.lat = location.coords.latitude;
@@ -13,12 +13,14 @@ export function initWeather(position: Geo, setWeather :React.Dispatch<React.SetS
                 newOptions.location = weather.timezone.split("/")[1].replace("_", " ");
                 newOptions.tempF =Math.round( weather.currently.temperature);
                 newOptions.tempC =Math.round(  celsius( weather.currently.temperature));
-                newOptions.description = weather.currently.icon
-                newOptions.loaded = true;
-                console.log("State Changed")
-                console.log(newOptions)
+                newOptions.icon = weather.currently.icon;
+                newOptions.description = weather.currently.summary;
+                setLoaded(true);
                 return newOptions;
             })
+            console.log("State Changed");
+            console.log(weather);
+            sessionStorage.setItem("weather", JSON.stringify(weather));
         })
     }
     function fail() {
@@ -31,7 +33,31 @@ export function initWeather(position: Geo, setWeather :React.Dispatch<React.SetS
     }
 };
 
+export function refreshWeather(setWeather :React.Dispatch<React.SetStateAction<WeatherInfo>>, setLoaded :React.Dispatch<React.SetStateAction<boolean>>){
+    weather().then(weather=> {
+        setWeather((options)=>{
+            let newOptions = Object.assign({}, options);
+            newOptions.location = weather.timezone.split("/")[1].replace("_", " ");
+            newOptions.tempF =Math.round( weather.currently.temperature);
+            newOptions.tempC =Math.round(  celsius( weather.currently.temperature));
+            newOptions.icon = weather.currently.icon;
+            newOptions.description = weather.currently.summary;
+            setLoaded(true);
+            return newOptions;
+        });
+        console.log("State Changed")
+        sessionStorage.setItem("weather", JSON.stringify(weather));
+    });
+}
+
 function celsius(fahrenheit: number){
 return (fahrenheit - 32) * 5 / 9;
 }
 
+export function truthy (val:any) {
+    if (val) {
+        return true;
+    } else {
+        return false;
+    }
+}
