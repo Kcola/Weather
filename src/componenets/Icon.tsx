@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Skycons } from "skycons-ts";
-import { IconOptions } from "../types/interfaces";
+import { WeatherInfo } from "../helpers/interfaces";
 type IconProp = {
-  options: IconOptions;
+  options: WeatherInfo;
 };
 
 function Icon({ options }: IconProp) {
