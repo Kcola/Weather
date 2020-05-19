@@ -6,9 +6,9 @@ import Icon from "../componenets/Icon";
 import Temperature from "../componenets/Temperature";
 import Description from "../componenets/Description";
 import React from "react";
-import { WeatherInfo } from "../helpers/interfaces";
+import { IconInfo, WeatherInfo } from "../helpers/interfaces";
 
-function Home(weatherInfo: any) {
+function Home(weatherInfo: WeatherInfo & IconInfo) {
   return (
     <Center colClass="col-xs-auto col-lg-6" id="home" height="93vh">
       <Row style={{ marginBottom: "50px" }}>

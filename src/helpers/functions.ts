@@ -1,6 +1,7 @@
 import {Geo, WeatherInfo} from "./interfaces";
 import React from "react";
 import {weather} from "../App";
+import {DayOfWeek} from "./types";
 
 export function initWeather(position: Geo, setWeather :React.Dispatch<React.SetStateAction<WeatherInfo>>, setLoaded :React.Dispatch<React.SetStateAction<boolean>>){
     function success(location: any) {
@@ -50,7 +51,7 @@ export function refreshWeather(setWeather :React.Dispatch<React.SetStateAction<W
     });
 }
 
-function celsius(fahrenheit: number){
+export function celsius(fahrenheit: number){
 return (fahrenheit - 32) * 5 / 9;
 }
 
@@ -60,4 +61,16 @@ export function truthy (val:any) {
     } else {
         return false;
     }
+}
+
+export function epochToDate(epoch: number) {
+    let date = new Date(0);
+    date.setUTCSeconds(epoch);
+    return date;
+}
+
+export function dateToDayOfWeek(date: Date): DayOfWeek {
+    let dayLookup: Array<DayOfWeek>;
+    dayLookup = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return dayLookup[date.getDay()];
 }

@@ -19,14 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd20830-c696-4e90-9edf-ed807194b428" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="2fd20830-c696-4e90-9edf-ed807194b428" name="Default Changelist" comment="stopping point.">
+      <change afterPath="$PROJECT_DIR$/src/componenets/sass/forecast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componenets/Day.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/Day.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componenets/Icon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/Icon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componenets/sass/temperature.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/sass/temperature.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componenets/Temperature.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenets/Temperature.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/functions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Forecast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Forecast.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,10 +41,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="Sass File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -62,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="list.type.of.created.stylesheet" value="Sass" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -154,32 +158,32 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1315" y="265" key="FileChooserDialogImpl/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589723235702" />
-    <state width="1658" height="170" key="GridCell.Tab.0.bottom" timestamp="1589900732699">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2027" height="377" key="GridCell.Tab.0.bottom" timestamp="1589910929000">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1658" height="170" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589900732699" />
-    <state width="2027" height="349" key="GridCell.Tab.0.bottom/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589848477736" />
+    <state width="2027" height="377" key="GridCell.Tab.0.bottom/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589910929000" />
     <state width="1899" height="349" key="GridCell.Tab.0.bottom/0.0.2048.1112/2560.0.1920.1040@2560.0.1920.1040" timestamp="1589848702522" />
     <state width="1263" height="214" key="GridCell.Tab.0.bottom/2560.216.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1589764594718" />
-    <state width="1658" height="170" key="GridCell.Tab.0.center" timestamp="1589900732698">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2027" height="377" key="GridCell.Tab.0.center" timestamp="1589910929000">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1658" height="170" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589900732698" />
-    <state width="2027" height="349" key="GridCell.Tab.0.center/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589848477734" />
+    <state width="2027" height="377" key="GridCell.Tab.0.center/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589910929000" />
     <state width="1899" height="349" key="GridCell.Tab.0.center/0.0.2048.1112/2560.0.1920.1040@2560.0.1920.1040" timestamp="1589848702522" />
     <state width="1263" height="214" key="GridCell.Tab.0.center/2560.216.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1589764594717" />
-    <state width="1658" height="170" key="GridCell.Tab.0.left" timestamp="1589900732697">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2027" height="377" key="GridCell.Tab.0.left" timestamp="1589910929000">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1658" height="170" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589900732697" />
-    <state width="2027" height="349" key="GridCell.Tab.0.left/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589848477734" />
+    <state width="2027" height="377" key="GridCell.Tab.0.left/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589910929000" />
     <state width="1899" height="349" key="GridCell.Tab.0.left/0.0.2048.1112/2560.0.1920.1040@2560.0.1920.1040" timestamp="1589848702522" />
     <state width="1263" height="214" key="GridCell.Tab.0.left/2560.216.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1589764594716" />
-    <state width="1658" height="170" key="GridCell.Tab.0.right" timestamp="1589900732699">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2027" height="377" key="GridCell.Tab.0.right" timestamp="1589910929000">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1658" height="170" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589900732699" />
-    <state width="2027" height="349" key="GridCell.Tab.0.right/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589848477735" />
+    <state width="2027" height="377" key="GridCell.Tab.0.right/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1589910929000" />
     <state width="1899" height="349" key="GridCell.Tab.0.right/0.0.2048.1112/2560.0.1920.1040@2560.0.1920.1040" timestamp="1589848702522" />
     <state width="1263" height="214" key="GridCell.Tab.0.right/2560.216.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1589764594718" />
     <state x="104" y="67" key="SettingsEditor" timestamp="1589895321613">

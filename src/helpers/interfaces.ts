@@ -11,8 +11,14 @@ export interface WeatherInfo {
     description:string
 }
 
-export interface Geo
-{
+export interface IconInfo {
+    instance:number,
+    color: string,
+    icon: IconKey,
+    iconWidth?: number,
+    iconHeight?: number,
+}
+export interface Geo{
     long:number,
     lat:number
 }
