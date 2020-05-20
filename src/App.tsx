@@ -41,7 +41,6 @@ function App() {
         <Header variant="tabs" defaultActiveKey="/home" />
         <Switch>
           <Route exact path="/" component={() => <Home {...weather} />} />
-          <Route exact path="/forecast" component={Forecast} />
           <Route exact path="/timemachine" component={TimeMachine} />
         </Switch>
       </Router>

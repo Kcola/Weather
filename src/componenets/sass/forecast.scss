@@ -1,4 +1,33 @@
 #forecast{
-  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
   color:$fontColor;
+  font-size: 1rem;
+}
+.icon{
+  padding-right: 10px;
+}
+.precipitation{
+  margin-left:10px;
+  &:before{
+    content: url("../../images/rain-drops.png");
+    filter: invert(1);
+    zoom:0.03;
+    position:relative;
+    right:30px;
+  }
+}
+@media screen and (min-width: 415px){
+  #forecast{
+    font-size: 2rem;
+  }
+
+  .precipitation{
+    text-align: left;
+    &:before{
+      content: url("../../images/rain-drops.png");
+      filter: invert(1);
+      zoom:0.05;
+      position:relative;
+      right:30px;
+    }
+  }
 }

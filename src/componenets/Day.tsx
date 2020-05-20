@@ -18,20 +18,26 @@ function Day({ day, precipitation, high, icon, low }: DayProp) {
   let celsiusL = Math.round(celsius(low));
   let celsiusH = Math.round(celsius(high));
   let unit = "C" as "C" | "F";
-  let style = { textAlign: "center", fontSize: "2rem" } as CSSProperties;
+  let style = {
+    textAlign: "left",
+    margin: "0.2vw",
+  } as CSSProperties;
   let prefix = "col my-auto";
   return (
-    <Row style={{ ...style, height: "13.3vh" }}>
-      <Col bsPrefix={prefix}>{`${dateToDayOfWeek(day)}`}</Col>
-      <Col bsPrefix={prefix}>{`${Math.round(precipitation * 100)}%`}</Col>
-      <Col bsPrefix={prefix}>
+    <Row style={{ ...style }}>
+      <Col bsPrefix="col col-3 my-auto">{`${dateToDayOfWeek(day)}`}</Col>
+      <Col
+        style={{ paddingRight: "0px" }}
+        bsPrefix={`col col-3 my-auto precipitation`}
+      >{`${Math.round(precipitation * 100)}%`}</Col>
+      <Col style={{ paddingLeft: "0px" }} bsPrefix={prefix}>
         <Icon
           options={{
             color: "white",
             icon: icon,
-            iconHeight: 100,
-            iconWidth: 100,
-            instance: day.getDay(),
+            iconHeight: 40,
+            iconWidth: 40,
+            instance: day.getDay() + 2,
           }}
         />
       </Col>
