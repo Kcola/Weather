@@ -1,0 +1,10 @@
+.loading{
+  &:after{
+    content: "Loading";
+    color: white;
+    position: relative;
+    top:10px;
+    font-size: 1.3rem;
+    left: 14px;
+  }
+}

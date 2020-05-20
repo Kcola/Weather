@@ -12,12 +12,12 @@ type DayProp = {
   icon: IconKey;
   low: number;
   high: number;
+  unit: "C" | "F";
 };
 
-function Day({ day, precipitation, high, icon, low }: DayProp) {
+function Day({ day, precipitation, high, icon, low, unit }: DayProp) {
   let celsiusL = Math.round(celsius(low));
   let celsiusH = Math.round(celsius(high));
-  let unit = "C" as "C" | "F";
   let style = {
     textAlign: "left",
     margin: "0.2vw",

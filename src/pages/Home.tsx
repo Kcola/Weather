@@ -35,7 +35,7 @@ function Home(weatherInfo: WeatherInfo & IconInfo) {
                 style={{ textAlign: "center", fontSize: "3rem" }}
                 tempC={weatherInfo.tempC}
                 tempF={weatherInfo.tempF}
-                unit={"F"}
+                unit={sessionStorage.unit}
               />
               <Description
                 style={{ fontSize: "1rem" }}
@@ -45,7 +45,7 @@ function Home(weatherInfo: WeatherInfo & IconInfo) {
           </Col>
         </Row>
       </Center>
-      <Forecast id="forecast" />
+      <Forecast id="forecast" unit={sessionStorage.unit} />
     </div>
   );
 }

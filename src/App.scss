@@ -2,8 +2,12 @@
 @import "componenets/sass/temperature";
 @import "componenets/sass/home";
 @import "componenets/sass/forecast";
-
+@import "componenets/sass/loading";
 .main{
   min-height: 93vh;
   background: linear-gradient(rgb(56,56,56), rgb(0,0,0));
+}
+.sk-rotating-plane > div {
+  width: 100px !important;
+  height: 100px !important;
 }
