@@ -16,12 +16,12 @@ function Header({ props, setUnit }: HeaderProp) {
   return (
     <Nav {...props}>
       <Nav.Item>
-        <Nav.Link as={Link} to="/">
+        <Nav.Link as={Link} to="/Weather/">
           Home
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link as={Link} to="/timemachine">
+        <Nav.Link as={Link} to="/Weather/timemachine">
           Time Machine
         </Nav.Link>
       </Nav.Item>

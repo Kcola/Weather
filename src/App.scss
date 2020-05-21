@@ -4,10 +4,45 @@
 @import "componenets/sass/forecast";
 @import "componenets/sass/loading";
 .main{
-  min-height: 93vh;
+  min-height: 94.8vh;
   background: linear-gradient(rgb(56,56,56), rgb(0,0,0));
+  overflow: hidden;
 }
+
 .sk-rotating-plane > div {
   width: 100px !important;
   height: 100px !important;
+}
+a{
+  color:black !important;
+}
+
+#home{
+  min-height:44.8vh !important;
+}
+
+#forecast{
+  min-height: 44.8vh !important;
+}
+
+.footer{
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  z-index: 10;
+  line-height: 40px !important;
+  background: white;
+  height: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
+  #home{
+   min-height:46vh !important;
+  }
+  #forecast{
+    min-height: 46vh !important;
+  }
 }

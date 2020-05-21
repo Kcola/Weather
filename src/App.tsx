@@ -43,12 +43,12 @@ function App() {
           props={{ variant: "tabs", defaultActiveKey: "/home" }}
         />
         <Switch>
-          <Route exact path="/" component={() => <Home {...weather} />} />
-          <Route exact path="/timemachine" component={TimeMachine} />
+          <Route exact path="/Weather/" component={() => <Home {...weather} />} />
+          <Route exact path="/Weather/timemachine" component={TimeMachine} />
         </Switch>
       </Router>
     );
-  else if(blocked) return <Center colClass="col col-auto" height="93vh"><div className="blocked">Location service blocked, cannnot retrieve weather.</div></Center>
+  else if(blocked) return <Center colClass="col col-auto" height="93vh"><div className="blocked">Location service blocked, cannot retrieve weather.</div></Center>
   else return <Loading name="rotating-plane" color="white" />;
 }
 
