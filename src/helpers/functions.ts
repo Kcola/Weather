@@ -7,13 +7,22 @@ import {DayOfWeek} from "./types";
 }
 
  async function getWeather(position: Geo){
-    let response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/9ab479cdd941d8bb66332fa8f81551b9/${position.lat},${position.long}`,{
+     let url =`https://cors-anywhere.herokuapp.com/
+     https://api.darksky.net/forecast/9ab479cdd941d8bb66332fa8f81551b9/
+     ${position.lat},${position.long}`.replace(/\s/g, '');
+     debugger
+    let response = await fetch(url,{
     });
     let data = await response.json();
     return data;
 }
 
-export function initWeather(position: Geo, weatherInfo: WeatherInfo, setLoaded :React.Dispatch<React.SetStateAction<boolean>>, setBlocked :React.Dispatch<React.SetStateAction<boolean>>){
+export function initWeather(
+    position: Geo,
+    weatherInfo: WeatherInfo,
+    setLoaded :React.Dispatch<React.SetStateAction<boolean>>,
+    setBlocked :React.Dispatch<React.SetStateAction<boolean>>
+){
     function success(location: any) {
         position.long = location.coords.longitude;
         position.lat = location.coords.latitude;
@@ -38,19 +47,19 @@ export function initWeather(position: Geo, weatherInfo: WeatherInfo, setLoaded :
     }
 };
 
-export function refreshWeather(setWeather :React.Dispatch<React.SetStateAction<WeatherInfo>>, setLoaded :React.Dispatch<React.SetStateAction<boolean>>){
+export function refreshWeather(
+    setWeather :React.Dispatch<React.SetStateAction<WeatherInfo>>,
+    weatherInfo:WeatherInfo, setLoaded :React.Dispatch<React.SetStateAction<boolean>>
+){
     weather().then(weather=> {
-        setWeather((options)=>{
-            let newOptions = Object.assign({}, options);
-            newOptions.location = weather.timezone.split("/")[1].replace("_", " ");
-            newOptions.tempF =Math.round( weather.currently.temperature);
-            newOptions.tempC =Math.round(  celsius( weather.currently.temperature));
-            newOptions.icon = weather.currently.icon;
-            newOptions.description = weather.currently.summary;
+            weatherInfo.location = weather.timezone.split("/")[1].replace("_", " ");
+            weatherInfo.tempF =Math.round( weather.currently.temperature);
+            weatherInfo.tempC =Math.round(  celsius( weather.currently.temperature));
+            weatherInfo.icon = weather.currently.icon;
+            weatherInfo.description = weather.currently.summary;
             sessionStorage.setItem("weather", JSON.stringify(weather));
             setLoaded(true);
-            return newOptions;
-        });
+            return weatherInfo;
     });
 }
 

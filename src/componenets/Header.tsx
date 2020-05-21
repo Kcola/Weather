@@ -8,6 +8,7 @@ type HeaderProp = {
   props: NavProps;
   setUnit: React.Dispatch<React.SetStateAction<"C" | "F">>;
 };
+
 function Header({ props, setUnit }: HeaderProp) {
   function handleUnitChange() {
     if (sessionStorage.unit === "F") setUnit("C");

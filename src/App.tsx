@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./componenets/Header";
-import Center from "./componenets/Center"
+import Center from "./componenets/Center";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TimeMachine from "./pages/TimeMachine";
@@ -30,11 +30,12 @@ function App() {
       if (!loaded) {
         if (!truthy(sessionStorage.positon))
           initWeather(position, options, setLoaded, setBlocked);
-        else refreshWeather(setWeather, setLoaded);
+        else refreshWeather(setWeather, options, setLoaded);
       }
     },
     [loaded, unit, options, blocked]
   );
+
   if (loaded)
     return (
       <Router>
@@ -43,12 +44,23 @@ function App() {
           props={{ variant: "tabs", defaultActiveKey: "/home" }}
         />
         <Switch>
-          <Route exact path="/Weather/" component={() => <Home {...weather} />} />
+          <Route
+            exact
+            path="/Weather/"
+            component={() => <Home {...weather} />}
+          />
           <Route exact path="/Weather/timemachine" component={TimeMachine} />
         </Switch>
       </Router>
     );
-  else if(blocked) return <Center colClass="col col-auto" height="93vh"><div className="blocked">Location service blocked, cannot retrieve weather.</div></Center>
+  else if (blocked)
+    return (
+      <Center colClass="col col-auto" height="93vh">
+        <div className="blocked">
+          Location service blocked, cannot retrieve weather.
+        </div>
+      </Center>
+    );
   else return <Loading name="rotating-plane" color="white" />;
 }
 
