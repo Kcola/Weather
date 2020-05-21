@@ -8,3 +8,16 @@
     left: 14px;
   }
 }
+
+.blocked{
+font-size: 1.2rem;
+  text-align: center;
+  &:before{
+    content: url("../../images/sad.png");
+    zoom:0.3;
+    position: absolute;
+    left:30%;
+    bottom: 100%;
+
+  }
+}

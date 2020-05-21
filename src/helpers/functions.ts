@@ -1,9 +1,19 @@
 import {Geo, WeatherInfo} from "./interfaces";
 import React from "react";
-import {weather} from "../App";
 import {DayOfWeek} from "./types";
 
-export function initWeather(position: Geo, weatherInfo: WeatherInfo, setLoaded :React.Dispatch<React.SetStateAction<boolean>>){
+ async function weather() {
+    return await getWeather(JSON.parse(sessionStorage.position));
+}
+
+ async function getWeather(position: Geo){
+    let response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/9ab479cdd941d8bb66332fa8f81551b9/${position.lat},${position.long}`,{
+    });
+    let data = await response.json();
+    return data;
+}
+
+export function initWeather(position: Geo, weatherInfo: WeatherInfo, setLoaded :React.Dispatch<React.SetStateAction<boolean>>, setBlocked :React.Dispatch<React.SetStateAction<boolean>>){
     function success(location: any) {
         position.long = location.coords.longitude;
         position.lat = location.coords.latitude;
@@ -19,7 +29,7 @@ export function initWeather(position: Geo, weatherInfo: WeatherInfo, setLoaded :
             })
     }
     function fail() {
-        alert("Error getting location");
+        setBlocked(true);
     }
     if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(success, fail);

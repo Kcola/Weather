@@ -5,6 +5,7 @@ import Location from "../componenets/Location";
 import Icon from "../componenets/Icon";
 import Temperature from "../componenets/Temperature";
 import Description from "../componenets/Description";
+import Footer from "../componenets/Footer"
 import React from "react";
 import { IconInfo, WeatherInfo } from "../helpers/interfaces";
 import Forecast from "./Forecast";
@@ -28,7 +29,7 @@ function Home(weatherInfo: WeatherInfo & IconInfo) {
             </Center>
           </Col>
         </Row>
-        <Row style={{ margin: "0 0 60px 0" }}>
+        <Row style={{ margin: "0 0 40px 0" }}>
           <Col>
             <Center colClass="col-auto" height="100%">
               <Temperature
@@ -46,6 +47,7 @@ function Home(weatherInfo: WeatherInfo & IconInfo) {
         </Row>
       </Center>
       <Forecast id="forecast" unit={sessionStorage.unit} />
+      <Footer/>
     </div>
   );
 }

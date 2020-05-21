@@ -31,7 +31,7 @@ function Header({ props, setUnit }: HeaderProp) {
             offlabel="°C"
             onlabel="°F"
             size="sm"
-            onstyle="primary"
+            onstyle="dark"
             offstyle="secondary"
             checked={true}
             onChange={handleUnitChange}
