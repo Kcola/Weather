@@ -8,7 +8,10 @@ type IconProp = {
 function Icon({ options }: IconProp) {
   useEffect(function () {
     let icons = new Skycons({ color: options.color });
-    icons.add(`icon${options.instance}`, options.icon);
+    icons.add(
+      `icon${options.instance}`,
+      options.icon !== undefined ? options.icon : "rain"
+    );
     icons.play();
   });
   return (

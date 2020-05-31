@@ -6,36 +6,25 @@ import Center from "./componenets/Center";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TimeMachine from "./pages/TimeMachine";
-import { initWeather, refreshWeather, truthy } from "./helpers/functions";
 import { Geo, WeatherInfo } from "./helpers/interfaces";
 import Loading from "./componenets/Loading";
+import { initWeather } from "./helpers/functions";
 
 function App() {
   let options = {
     color: "white",
-    iconHeight: 128,
-    iconWidth: 128,
-    instance: 1,
-    description: "rain",
   } as WeatherInfo;
 
   const [weather, setWeather] = useState(options);
-  let [loaded, setLoaded] = useState(false);
-  let [unit, setUnit] = useState("F" as "C" | "F");
-  let [blocked, setBlocked] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [unit, setUnit] = useState("F" as "C" | "F");
+  const [blocked, setBlocked] = useState(false);
   sessionStorage.setItem("unit", unit);
-  useEffect(
-    function () {
-      let position = {} as Geo;
-      if (!loaded) {
-        if (!truthy(sessionStorage.positon))
-          initWeather(position, options, setLoaded, setBlocked);
-        else refreshWeather(setWeather, options, setLoaded);
-      }
-    },
-    [loaded, unit, options, blocked]
-  );
 
+  useEffect(function () {
+    let position = {} as Geo;
+    initWeather(position, options, setLoaded, setBlocked);
+  }, []);
   if (loaded)
     return (
       <Router>
@@ -47,9 +36,37 @@ function App() {
           <Route
             exact
             path="/Weather/"
-            component={() => <Home {...weather} />}
+            component={() => (
+              <Home
+                {...{
+                  unit: unit,
+                  weatherInfo: weather,
+                  setWeather: setWeather,
+                  blocked: blocked,
+                  setBlocked: setBlocked,
+                  loaded: loaded,
+                  setLoaded: setLoaded,
+                }}
+              />
+            )}
           />
-          <Route exact path="/Weather/timemachine" component={TimeMachine} />
+          <Route
+            exact
+            path="/Weather/timemachine"
+            component={() => (
+              <TimeMachine
+                {...{
+                  unit: unit,
+                  weatherInfo: weather,
+                  setWeather: setWeather,
+                  blocked: blocked,
+                  setBlocked: setBlocked,
+                  loaded: loaded,
+                  setLoaded: setLoaded,
+                }}
+              />
+            )}
+          />
         </Switch>
       </Router>
     );

@@ -5,12 +5,34 @@ import Location from "../componenets/Location";
 import Icon from "../componenets/Icon";
 import Temperature from "../componenets/Temperature";
 import Description from "../componenets/Description";
-import Footer from "../componenets/Footer"
-import React from "react";
-import { IconInfo, WeatherInfo } from "../helpers/interfaces";
+import Footer from "../componenets/Footer";
+import React, { useEffect } from "react";
+import { Geo, IconInfo, WeatherInfo } from "../helpers/interfaces";
 import Forecast from "./Forecast";
+import {
+  initWeather,
+  refreshTMWeather,
+  refreshWeather,
+  truthy,
+} from "../helpers/functions";
 
-function Home(weatherInfo: WeatherInfo & IconInfo) {
+type HomeProp = {
+  weatherInfo: WeatherInfo & IconInfo;
+  loaded: boolean;
+  unit: "C" | "F";
+  setLoaded: React.Dispatch<React.SetStateAction<boolean>>;
+  setWeather: React.Dispatch<React.SetStateAction<WeatherInfo & IconInfo>>;
+};
+
+function Home({ weatherInfo, loaded, setLoaded, setWeather, unit }: HomeProp) {
+  useEffect(
+    function () {
+      refreshWeather(setWeather, weatherInfo, setLoaded);
+      sessionStorage.setItem("unit", unit);
+    },
+    [loaded, unit]
+  );
+
   return (
     <div className="main">
       <Center id="home" colClass="col-xs-auto col-lg-6" height="100%">
@@ -47,7 +69,7 @@ function Home(weatherInfo: WeatherInfo & IconInfo) {
         </Row>
       </Center>
       <Forecast id="forecast" unit={sessionStorage.unit} />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

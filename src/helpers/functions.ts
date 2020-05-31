@@ -6,11 +6,25 @@ import {DayOfWeek} from "./types";
     return await getWeather(JSON.parse(sessionStorage.position));
 }
 
- async function getWeather(position: Geo){
+
+async function TMWeather(time: number) {
+    return await getTMWeather(JSON.parse(sessionStorage.position), time);
+}
+
+async function getWeather(position: Geo){
      let url =`https://cors-anywhere.herokuapp.com/
      https://api.darksky.net/forecast/9ab479cdd941d8bb66332fa8f81551b9/
      ${position.lat},${position.long}`.replace(/\s/g, '');
-     debugger
+    let response = await fetch(url,{
+    });
+    let data = await response.json();
+    return data;
+}
+
+async function getTMWeather(position: Geo, time: number){
+    let url =`https://cors-anywhere.herokuapp.com/
+     https://api.darksky.net/forecast/9ab479cdd941d8bb66332fa8f81551b9/
+     ${position.lat},${position.long},${time}`.replace(/\s/g, '');
     let response = await fetch(url,{
     });
     let data = await response.json();
@@ -34,7 +48,9 @@ export function initWeather(
                 weatherInfo.icon = weather.currently.icon;
                 weatherInfo.description = weather.currently.summary;
                 sessionStorage.setItem("weather", JSON.stringify(weather));
+                sessionStorage.setItem("TMWeather", JSON.stringify(weather));
                 setLoaded(true);
+                console.log("StateChanged");
             })
     }
     function fail() {
@@ -59,10 +75,25 @@ export function refreshWeather(
             weatherInfo.description = weather.currently.summary;
             sessionStorage.setItem("weather", JSON.stringify(weather));
             setLoaded(true);
-            return weatherInfo;
     });
 }
 
+
+export function refreshTMWeather(
+    setWeather :React.Dispatch<React.SetStateAction<WeatherInfo>>,
+    weatherInfo:WeatherInfo, setTMLoaded :React.Dispatch<React.SetStateAction<boolean>>,
+    time: Date
+){
+    TMWeather(Math.round(time.getTime()/1000)).then(weather=> {
+        weatherInfo.location = weather.timezone.split("/")[1].replace("_", " ");
+        weatherInfo.tempF =Math.round( weather.daily.data[0].temperatureHigh);
+        weatherInfo.tempC =Math.round(  celsius( weather.daily.data[0].temperatureHigh));
+        weatherInfo.icon = weather.currently.icon;
+        weatherInfo.description = weather.daily.data[0].summary;
+        sessionStorage.setItem("TMWeather", JSON.stringify(weather));
+        setTMLoaded(true);
+    });
+}
 export function celsius(fahrenheit: number){
 return (fahrenheit - 32) * 5 / 9;
 }
