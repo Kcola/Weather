@@ -7,6 +7,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import Form from "react-bootstrap/Form";
 import Loading from "../componenets/Loading";
 import Forecast from "./Forecast";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { withRouter } from "react-router-dom";
+import Footer from "../componenets/Footer";
 
 type TimeMachineProp = {
   loaded: boolean;
@@ -16,6 +20,7 @@ type TimeMachineProp = {
 };
 
 function TimeMachine({ unit }: TimeMachineProp) {
+  let prefix = "col col-auto my-auto ml-auto mr-auto";
   const [weatherInfo, setTMWeather] = useState(
     JSON.parse(sessionStorage.TMWeather)
   );
@@ -40,11 +45,38 @@ function TimeMachine({ unit }: TimeMachineProp) {
             />
           </Form>
         </Center>
+        <Center height="100%" colClass="col col-lg-6">
+          <Row
+            style={{
+              textAlign: "left",
+              color: "white",
+              margin: "0.2vw",
+              width: "100%",
+              borderTop: "1px solid white",
+              borderBottom: "1px solid white",
+              height: "40px",
+              fontWeight: "bold",
+            }}
+          >
+            <Col bsPrefix={prefix}>{"Time"}</Col>
+            <Col bsPrefix={prefix}>{"Desc"}</Col>
+            <Col
+              bsPrefix={
+                "col col-auto my-auto ml-auto mr-auto d-none d-sm-block"
+              }
+            >
+              {"Skycon"}
+            </Col>
+            <Col bsPrefix={prefix}>{"Rain %"}</Col>
+            <Col bsPrefix={prefix}>{"Temp"}</Col>
+            <Col bsPrefix={prefix}>{"Feels"}</Col>
+          </Row>
+        </Center>
         <Forecast id="time-machine" unit={unit} tm={true} />
+        <Footer />
       </div>
     );
-  else
-    return <Loading name="rotating-plane" color="white" />;
+  else return <Loading name="rotating-plane" color="white" />;
 }
 
 export default TimeMachine;

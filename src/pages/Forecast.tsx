@@ -18,15 +18,16 @@ function Forecast({ id, unit, tm }: ForecastProp) {
     if (tm) {
       weather = JSON.parse(sessionStorage.TMWeather);
       week = weather.hourly.data;
-    }
-    else
-      week.pop();
+    } else week.pop();
     return (
-      <Row id={id} style={{ padding: "15px" }}>
-        <Col bsPrefix={`col col-xs-auto ${tm ? "col-lg-6" : "col-lg-6"} mr-auto ml-auto`}>
-          {
-            !tm ?
-              week.map((day: any, idx: number) => (
+      <Row id={id} style={{ paddingTop: "5px" }}>
+        <Col
+          bsPrefix={`col col-xs-auto ${
+            tm ? "col-lg-6" : "col-lg-6"
+          } mr-auto ml-auto`}
+        >
+          {!tm
+            ? week.map((day: any, idx: number) => (
                 <Day
                   day={epochToDate(day.time)}
                   high={Math.round(day.temperatureHigh)}
@@ -36,8 +37,8 @@ function Forecast({ id, unit, tm }: ForecastProp) {
                   precipitation={day.precipProbability}
                   unit={unit}
                 />
-              )) :
-              week.map((day: any, idx: number) => (
+              ))
+            : week.map((day: any, idx: number) => (
                 <Center key={idx} height="60px" colClass="col-12">
                   <Hour
                     day={epochToDate(day.time)}
@@ -51,7 +52,7 @@ function Forecast({ id, unit, tm }: ForecastProp) {
                 </Center>
               ))}
         </Col>
-      </Row >
+      </Row>
     );
   } else return <div></div>;
 }

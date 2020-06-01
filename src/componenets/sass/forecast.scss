@@ -1,41 +1,40 @@
-#forecast{
-  color:$fontColor;
+#forecast {
+  color: $fontColor;
   font-size: 1rem;
 }
-.icon{
+.icon {
   padding-right: 10px;
 }
-.precipitation{
-  margin-left:10px;
-  &:before{
+.precipitation {
+  margin-left: 10px;
+  &:before {
     content: url("../../images/rain-drops.png");
     filter: invert(1);
-    zoom:0.03;
-    position:relative;
-    right:30px;
+    zoom: 0.03;
+    position: relative;
+    right: 30px;
+    top: 40px;
   }
 }
-@media screen and (min-width: 415px){
-  #forecast{
+@media screen and (min-width: 415px) {
+  #forecast {
     font-size: 2rem;
   }
 
-  .precipitation{
+  .precipitation {
     text-align: left;
-    &:before{
+    &:before {
       content: url("../../images/rain-drops.png");
       filter: invert(1);
-      zoom:0.05;
-      position:relative;
-      right:30px;
+      zoom: 0.05;
+      position: relative;
+      right: 30px;
     }
   }
 }
 
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)  {
-  #forecast{
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #forecast {
     font-size: 1.5rem;
   }
 }
