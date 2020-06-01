@@ -16,6 +16,7 @@ function Icon({ options }: IconProp) {
   });
   return (
     <canvas
+      style={{ marginTop: options.top }}
       id={`icon${options.instance}`}
       width={options.iconWidth}
       height={options.iconHeight}

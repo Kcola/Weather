@@ -1,26 +1,27 @@
-import {IconKey} from "skycons-ts";
+import { IconKey } from "skycons-ts";
 
 export interface WeatherInfo {
-    location:string,
-    instance:number,
+    location: string,
+    instance: number,
     color: string,
     icon: IconKey,
     iconWidth?: number,
     tempC: number,
     tempF: number,
     iconHeight?: number,
-    description:string
+    description: string
 }
 
 export interface IconInfo {
-    instance:number,
+    top?: string,
+    instance: number,
     color: string,
     icon: IconKey,
     iconWidth?: number,
     iconHeight?: number,
 }
 
-export interface Geo{
-    long:number,
-    lat:number
+export interface Geo {
+    long: number,
+    lat: number
 }

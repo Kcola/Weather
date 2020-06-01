@@ -24,8 +24,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-spinkit": "^3.0.0",
+    "react-table": "^7.1.0",
     "sass": "^1.26.5",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "uninstall": "0.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
