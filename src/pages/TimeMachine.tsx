@@ -58,8 +58,8 @@ function TimeMachine({ unit }: TimeMachineProp) {
               fontWeight: "bold",
             }}
           >
-            <Col bsPrefix={prefix}>{"Time"}</Col>
-            <Col bsPrefix={prefix}>{"Desc"}</Col>
+            <Col bsPrefix={"col col-1 my-auto ml-auto mr-auto"}>{"Time"}</Col>
+            <Col bsPrefix={"col col-2 my-auto ml-auto mr-auto"}>{"Desc"}</Col>
             <Col
               bsPrefix={
                 "col col-auto my-auto ml-auto mr-auto d-none d-sm-block"
