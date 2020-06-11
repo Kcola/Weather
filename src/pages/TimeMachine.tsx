@@ -60,7 +60,12 @@ function TimeMachine({ unit }: TimeMachineProp) {
             }}
           >
             <Col bsPrefix={"col col-1 my-auto ml-auto mr-auto"}>{"Time"}</Col>
-            <Col bsPrefix={"col col-2 my-auto ml-auto mr-auto"}>{"Desc"}</Col>
+            <Col
+              style={{ marginLeft: "5%" }}
+              bsPrefix={"col col-2 my-auto mr-auto"}
+            >
+              {"Desc"}
+            </Col>
             <Col
               bsPrefix={
                 "col col-auto my-auto ml-auto mr-auto d-none d-sm-block"
