@@ -5,6 +5,7 @@
 @import "componenets/sass/loading";
 .main {
   min-height: 94.8vh;
+  position: relative;
   background: linear-gradient(rgb(56, 56, 56), rgb(0, 0, 0));
   overflow: hidden;
 }
