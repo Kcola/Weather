@@ -39,7 +39,7 @@ function Forecast({ id, unit, tm }: ForecastProp) {
                 />
               ))
             : week.map((day: any, idx: number) => (
-                <Center key={idx} height="60px" colClass="col-12">
+                <Center key={idx} minHeight="60px" colClass="col-12">
                   <Hour
                     day={epochToDate(day.time)}
                     temp={Math.round(day.temperature)}
