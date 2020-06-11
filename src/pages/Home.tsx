@@ -35,7 +35,7 @@ function Home({ weatherInfo, loaded, setLoaded, setWeather, unit }: HomeProp) {
 
   return (
     <div className="main">
-      <Center id="home" colClass="col-xs-auto col-lg-6" height="100%">
+      <Center id="home" colClass="col-auto col-lg-6" height="100%">
         <Row style={{ margin: "40px 0 60px 0" }}>
           <Col>
             <Center colClass="col-auto" height="100%">

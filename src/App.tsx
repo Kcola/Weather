@@ -13,6 +13,8 @@ import { initWeather } from "./helpers/functions";
 function App() {
   let options = {
     color: "white",
+    iconHeight: 130,
+    iconWidth: 130
   } as WeatherInfo;
 
   const [weather, setWeather] = useState(options);
