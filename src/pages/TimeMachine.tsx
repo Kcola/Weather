@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { withRouter } from "react-router-dom";
 import Footer from "../componenets/Footer";
+import { relative } from "path";
 
 type TimeMachineProp = {
   loaded: boolean;
@@ -73,7 +74,7 @@ function TimeMachine({ unit }: TimeMachineProp) {
           </Row>
         </Center>
         <Forecast id="time-machine" unit={unit} tm={true} />
-        <Footer />
+        <Footer style={{ position: "relative" }} />
       </div>
     );
   else return <Loading name="rotating-plane" color="white" />;

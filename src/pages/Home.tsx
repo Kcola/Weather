@@ -69,7 +69,7 @@ function Home({ weatherInfo, loaded, setLoaded, setWeather, unit }: HomeProp) {
         </Row>
       </Center>
       <Forecast id="forecast" unit={sessionStorage.unit} />
-      <Footer />
+      <Footer style={{ position: "absolute" }} />
     </div>
   );
 }
